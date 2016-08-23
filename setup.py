@@ -25,9 +25,9 @@ tests_require = [
     'tox'
     ]
 
-setup(name='learning_journal_basic',
+setup(name='learning_journal',
       version='0.0',
-      description='learning_journal_basic',
+      description='learning_journal',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
           "Programming Language :: Python",
@@ -48,6 +48,6 @@ setup(name='learning_journal_basic',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = learning_journal_basic:main
+      main = learning_journal:main
       """,
       )

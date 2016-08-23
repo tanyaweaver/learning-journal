@@ -1,3 +1,0 @@
-[run]
-source = journal
-omit = journal/test*
