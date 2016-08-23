@@ -1,6 +1,31 @@
-from pyramid.view import view_config
+from pyramid.response import Response
+import os
+
+HERE = os.path.dirname(__file__)
 
 
-@view_config(route_name='home', renderer='templates/mytemplate.pt')
-def my_view(request):
-    return {'project': 'journal'}
+def lists(request):
+    imported_text = open(os.path.join(HERE, 'home_page.html')).read()
+    return Response(imported_text)
+
+
+def create(request):
+    imported_text = open(os.path.join(HERE, 'new_entry.html')).read()
+    return Response(imported_text)
+
+
+def detail(request):
+    imported_text = open(os.path.join(HERE, 'single_entry.html')).read()
+    return Response(imported_text)
+
+
+def update(request):
+    imported_text = open(os.path.join(HERE, 'edit_entry.html')).read()
+    return Response(imported_text)
+
+
+def includeme(config):
+    config.add_view(lists, route_name='lists')
+    config.add_view(create, route_name='create')
+    config.add_view(update, route_name='update')
+    config.add_view(detail, route_name='detail')

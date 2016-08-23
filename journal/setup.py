@@ -10,7 +10,10 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 requires = [
     'pyramid',
-    'pyramid_chameleon',
+    'ipython',
+    'pyramid_ipython',
+    # 'pyramid_chameleon',
+    'pyramid_jinja2',
     'pyramid_debugtoolbar',
     'waitress',
     ]
@@ -19,11 +22,12 @@ tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',  # includes virtualenv
     'pytest-cov',
+    'tox'
     ]
 
-setup(name='journal',
+setup(name='learning_journal_basic',
       version='0.0',
-      description='journal',
+      description='learning_journal_basic',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
           "Programming Language :: Python",
@@ -31,7 +35,7 @@ setup(name='journal',
           "Topic :: Internet :: WWW/HTTP",
           "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
       ],
-      author='',
+      author='Tatiana Weaver',
       author_email='',
       url='',
       keywords='web pyramid pylons',
@@ -44,6 +48,6 @@ setup(name='journal',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = journal:main
+      main = learning_journal_basic:main
       """,
       )
