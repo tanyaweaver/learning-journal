@@ -15,14 +15,8 @@ def create(request):
     return Response(imported_text)
 
 
-def detail1(request):
-    imported_text = open(os.path.join(HERE, 'templates/single_entry1.html'))\
-        .read()
-    return Response(imported_text)
-
-
-def detail2(request):
-    imported_text = open(os.path.join(HERE, 'templates/single_entry2.html'))\
+def detail(request):
+    imported_text = open(os.path.join(HERE, 'templates/single_entry.html'))\
         .read()
     return Response(imported_text)
 
@@ -37,5 +31,4 @@ def includeme(config):
     config.add_view(lists, route_name='lists')
     config.add_view(create, route_name='create')
     config.add_view(update, route_name='update')
-    config.add_view(detail1, route_name='detail1')
-    config.add_view(detail2, route_name='detail2')
+    config.add_view(detail, route_name='detail')
