@@ -18,23 +18,23 @@ ENTRIES = [
         "date": "August 22, 2016",
         "body": "Today I learned about heaps and templates."
      },
-      {
-         "title": "Day3",
-         "id": 3,
-         "date": "August 23, 2016",
-         "body": "Today I learned about deploying to Heroku."
-      },
-      {
-         "title": "Day4",
-         "id": 4,
-         "date": "August 25, 2016",
-         "body": "Today I learned about deploying to birds."
-      },
+     {
+        "title": "Day3",
+        "id": 3,
+        "date": "August 23, 2016",
+        "body": "Today I learned about deploying to Heroku."
+     },
+     {
+        "title": "Day4",
+        "id": 4,
+        "date": "August 25, 2016",
+        "body": "Today I learned about deploying to birds."
+     },
 ]
 
 
-@view_config(route_name='list', renderer='templates/home_page.jinja2')
-def list_(request):
+@view_config(route_name='lists', renderer='templates/home_page.jinja2')
+def lists(request):
     return {"entries": ENTRIES}
 
 
