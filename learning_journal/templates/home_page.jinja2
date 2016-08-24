@@ -22,21 +22,17 @@
         <div class=button>
             <h3><a href='/journal/new-entry'>Add New Entry</a></h3>
         </div>
-
+    {% for entry in entries %}
          <div class="single-entry">
-            <h3><a href='/journal/1'>Day 1</a></h3>
-            <h5>created on August 21, 2016</h5>
+            <h3><a href=/journal/{{entry.id}}>{{ entry.title }}</a></h3>
+            <h5>created on {{ entry.date }}</h5>
+            <p>{{ entry.body | safe }}</p>
           </div>
-
-          <div class="single-entry">
-            <h3><a href='/journal/2'>Day 2</a></h3>
-            <h5>created on August 21, 2016</h5>
-          </div>
-
+    {% endfor %}
       </main>
 
     <footer>s
-      
+
     </footer>
 
   </body>
