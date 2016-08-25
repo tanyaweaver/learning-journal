@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<html>
 
-  <head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href='https://fonts.googleapis.com/css?family=PT+Serif|Montserrat' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="/static/base.css">
-
-  </head>
-
-  <body>
-
-    <header>
-        <h1>Learning Journal<h1>
-        <h3>Code 401 - Software Development in Python</h3>
-        <h5>owner: Tatiana Weaver</h5>
-    </header>
-
-    <main>
+{% extends "layout.jinja2" %}
+  {% block body %}
 
         <div class=button>
             <h3><a href='/journal/new-entry'>Add New Entry</a></h3>
         </div>
     {% for entry in entries %}
          <div class="single-entry">
-            <h3><a href=/journal/{{entry.id}}>{{ entry.title }}</a></h3>
-            <h5>created on {{ entry.date }}</h5>
-            <p>{{ entry.body | safe }}</p>
+              <h3><a href=/journal/{{entry.id}}>{{ entry.title }}</a></h3>
+              <h5>created on {{ entry.date }}</h5>
+              <p>{{ entry.body | safe }}</p>
           </div>
     {% endfor %}
-      </main>
 
-    <footer>s
-
-    </footer>
-
-  </body>
-
-</html>
+  {% endblock %}

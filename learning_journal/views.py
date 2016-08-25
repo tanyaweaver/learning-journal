@@ -38,26 +38,16 @@ def lists(request):
     return {"entries": ENTRIES}
 
 
+@view_config(route_name='create', renderer='templates/new_entry.jinja2')
 def create(request):
-    imported_text = open(os.path.join(HERE, 'templates/new_entry.html'))\
-        .read()
-    return Response(imported_text)
+    return {"entries": ENTRIES}
 
 
+@view_config(route_name='details', renderer='templates/single_entry.jinja2')
 def detail(request):
-    imported_text = open(os.path.join(HERE, 'templates/single_entry.html'))\
-        .read()
-    return Response(imported_text)
+    return {"entries": ENTRIES}
 
 
+@view_config(route_name='update', renderer='templates/edit_entry.jinja2')
 def update(request):
-    imported_text = open(os.path.join(HERE, 'templates/edit_entry.html'))\
-        .read()
-    return Response(imported_text)
-
-
-def includeme(config):
-    # config.add_view(lists, route_name='lists')
-    config.add_view(create, route_name='create')
-    config.add_view(update, route_name='update')
-    config.add_view(detail, route_name='detail')
+    return {"entries": ENTRIES}

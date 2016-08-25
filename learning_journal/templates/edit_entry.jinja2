@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% extends "layout.jinja2" %}
+  {% block body %}
+
+        <form class="single_entry">
+
+           <div class="entry-title">
+              <h3>Title:</h3>
+             <input class="new-entry-title" placeholder="Day1">
+            </div>
+
+            <div class='entry-body'>
+              <h3>Notes:</h3>
+              <input class='new-entry-body' placeholder="Today I learned about gevent and how to set up a StreamServer.">
+            </div>
+
+            <div type=submit class="button">
+                <h3><a href='/'>Submit</a></h3>
+            </div>
+
+        </form>
+
+      {% endblock %}
+
