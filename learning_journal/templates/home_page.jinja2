@@ -7,11 +7,11 @@
             <h3><a href='/journal/new-entry'>Add New Entry</a></h3>
         </div>
     {% for entry in entries %}
-         <div class="single-entry">
+         <article class="single-entry">
               <h3><a href=/journal/{{entry.id}}>{{ entry.title }}</a></h3>
               <h5>created on {{ entry.date }}</h5>
               <p>{{ entry.body | safe }}</p>
-          </div>
+          </article>
     {% endfor %}
 
   {% endblock %}
