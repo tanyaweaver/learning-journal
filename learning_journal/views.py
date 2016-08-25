@@ -43,7 +43,7 @@ def create(request):
     return {"entries": ENTRIES}
 
 
-@view_config(route_name='details', renderer='templates/single_entry.jinja2')
+@view_config(route_name='detail', renderer='templates/single_entry.jinja2')
 def detail(request):
     return {"entries": ENTRIES}
 
