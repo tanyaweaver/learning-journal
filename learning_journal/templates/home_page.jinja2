@@ -4,13 +4,12 @@
   {% block body %}
 
         <div class=button>
-            <h3><a href='/journal/new-entry'>Add New Entry</a></h3>
+            <h3><a href="{{request.route_url('create')}}">Add New Entry</a></h3>
         </div>
     {% for entry in entries %}
          <article class="single-entry">
-              <h3><a href=/journal/{{entry.id}}>{{ entry.title }}</a></h3>
+              <h3><a href="{{ request.route_url('detail', id=entry.id)}}">{{ entry.title }}</a></h3>
               <h5>created on {{ entry.date }}</h5>
-              <p>{{ entry.body | safe }}</p>
           </article>
     {% endfor %}
 

@@ -7,12 +7,12 @@
 
            <div class="entry-title">
               <h3>Title:</h3>
-             <input class="new-entry-title" placeholder="Day1">
+             <input class="new-entry-title" placeholder= "{{ entry.title }}">
             </div>
 
             <div class='entry-body'>
               <h3>Notes:</h3>
-              <input class='new-entry-body' placeholder="Today I learned about gevent and how to set up a StreamServer.">
+              <input class='new-entry-body'  placeholder="{{ entry.body | safe}}">
             </div>
 
             <div type=submit class="button">
