@@ -1,3 +1,3 @@
-# learning-journal
+# Learning-journal for Code 401 (Software Development in Python)
 ## Learning Journal App implemented with Pyramid.
-* Step-1: https://fierce-cliffs-61626.herokuapp.com/
+* https://fast-reef-15635.herokuapp.com/
